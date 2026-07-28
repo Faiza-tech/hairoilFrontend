@@ -4,7 +4,8 @@
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-    min-height: calc(100vh - 160px); /* ensures footer stays at bottom */
+    min-height: calc(100vh - 160px);
+    /* ensures footer stays at bottom */
 }
 
 .cart-page h1 {
@@ -34,7 +35,8 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    align-items: center; /* centers all cart items */
+    align-items: center;
+    /* centers all cart items */
 }
 
 /* Individual cart item */
@@ -52,7 +54,7 @@
 }
 
 .cart-item:hover {
-    box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .cart-item img {
@@ -67,8 +69,8 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-  align-items: flex-start;
-flex: 1;
+    align-items: flex-start;
+    flex: 1;
 }
 
 .cart-item-details h3 {
@@ -88,8 +90,7 @@ flex: 1;
 }
 
 /* Quantity controls */
-.qtyControls
- {
+.qtyControls {
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -103,7 +104,8 @@ flex: 1;
     font-weight: bold;
 
     color: var(--brown);
-    background-color:  #8BC34A;;
+    background-color: #8BC34A;
+    ;
 
     border: none;
     border-radius: 6px;
@@ -134,29 +136,53 @@ flex: 1;
     color: #fff;
 }
 
-/* Cart total */
 .cart-total {
     margin-top: 2rem;
     width: 100%;
     max-width: 650px;
-    text-align: left;  /* right */
+    padding: 20px;
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    text-align: center;
 }
 
 .cart-total h2 {
-    margin-bottom: 1rem;
-    font-size:2rem;
+    margin-bottom: 15px;
     color: var(--brown);
 }
 
 .order-info {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #333;
-  background-color: #fff8e1;
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
-  border: 1px solid #ffd54f;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff8e1;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #ffd54f;
+}
+
+.checkoutBtn {
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.checkoutBtn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+.checkoutBtn:active {
+    transform: translateY(0);
 }
 
 

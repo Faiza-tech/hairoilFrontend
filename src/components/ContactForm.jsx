@@ -7,6 +7,7 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { Button } from "primereact/button";
 import { Toast } from "primereact/toast";
 import userSchema from "../validations/userSchema";
+import api from "../api/Axios";
 import "./ContactForm.css";
 
 const ContactForm = () => {
@@ -21,18 +22,30 @@ const ContactForm = () => {
     resolver: yupResolver(userSchema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Form Data:", data);
+  const onSubmit = async (data) => {
+    try {
+      await api.post("/api/contact", data);
 
-    toast.current.show({
-      severity: "success",
-      summary: "Success",
-      detail: "Message sent successfully",
-      life: 3000,
-    });
+      toast.current.show({
+        severity: "success",
+        summary: "Success",
+        detail: "Message sent successfully",
+        life: 3000,
+      });
 
-    reset();
+      reset();
+
+    } catch (err) {
+      toast.current.show({
+        severity: "error",
+        summary: "Error",
+        detail: "Failed to send message",
+        life: 3000,
+      });
+    }
   };
+
+
 
   return (
     <div className="contact-form-wrapper">
@@ -61,6 +74,14 @@ const ContactForm = () => {
           <InputText {...register("phone")} className={errors.phone ? "p-invalid" : ""} />
           {errors.phone && <small className="p-error">{errors.phone.message}</small>}
         </div>
+
+        {/* Subject */}
+        <div className="field">
+          <label>Subject</label>
+          <InputText {...register("subject")} className={errors.subject ? "p-invalid" : ""} />
+          {errors.subject && (<small className="p-error"> {errors.subject.message} </small>)}
+        </div>
+
 
         {/* Message */}
         <div className="field">

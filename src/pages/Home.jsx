@@ -1,6 +1,5 @@
 import heroImg from "../assets/h1.png";
 import { ChevronRight, Leaf, Droplets, Sun, Star } from "lucide-react";
-
 import ProductSection from "../components/ProductSection";
 import "./Home.css";
 import Benefits from "../components/Benefits";

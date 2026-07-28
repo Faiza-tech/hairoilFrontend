@@ -1,0 +1,17 @@
+
+
+.admin-layout{
+    display:flex;
+    min-height:100vh;
+}
+
+.admin-main{
+    flex:1;
+   background: #f3f4f6;
+    padding:30px;
+    transition:.3s;
+}
+
+.admin-main.expanded{
+    padding-left:40px;
+}

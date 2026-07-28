@@ -1,13 +1,16 @@
+
 import { useCart } from "../context/CartContext";
 import { FaShoppingCart } from "react-icons/fa";
-//import "./Cart.css";
 import styles from "./Cart.module.css";
+import { useNavigate } from "react-router-dom";
 
 
 const Cart = () => {
   const { cartItems, increaseQty, decreaseQty, removeFromCart } = useCart();
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const navigate = useNavigate();
 
   return (
     <section className={styles["cart-page"]}>
@@ -21,11 +24,11 @@ const Cart = () => {
       ) : (
         <div className={styles["cart-items-wrapper"]}>
           {cartItems.map((item) => (
-            <div key={item.id} className={styles["cart-item"]}>
+            <div key={item._id} className={styles["cart-item"]}>
               <img src={item.image} alt={item.title} />
 
               <div className={styles["cart-item-details"]}>
-                <h3>{item.title}</h3>
+                <h3>{item.name || item.title}</h3>
 
                 <p className={styles.price}>
                   ₹{item.price.toLocaleString("en-PK")}
@@ -37,14 +40,14 @@ const Cart = () => {
                 </p>
 
                 <div className={styles.qtyControls}>
-                  <button onClick={() => decreaseQty(item.id)} className={styles.qtyBtn}>-</button>
+                  <button onClick={() => decreaseQty(item._id)} className={styles.qtyBtn}>-</button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => increaseQty(item.id)} className={styles.qtyBtn}>+</button>
+                  <button onClick={() => increaseQty(item._id)} className={styles.qtyBtn}>+</button>
                 </div>
 
                 <button
                   className={styles.remove}
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => removeFromCart(item._id)}
                 >
                   Remove
                 </button>
@@ -55,13 +58,16 @@ const Cart = () => {
 
           <div className={styles["cart-total"]}>
             <h2>Total: ₹{total.toLocaleString("en-PK")}</h2>
-            <p className={styles["order-info"]}>
-              To place your order, please call us at{" "}
-              <strong>+1-234-567-8901</strong>
-              <br />
-              or email <strong>orders@example.com</strong>.
-            </p>
+
+            <button
+              onClick={() => navigate("/checkout")}
+              className={styles.checkoutBtn}
+            >
+              Proceed to Checkout
+            </button>
           </div>
+
+
         </div>
       )}
     </section>

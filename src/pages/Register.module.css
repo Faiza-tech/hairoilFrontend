@@ -1,0 +1,88 @@
+.registerPage {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+  background: #f8f9fa;
+}
+
+.card {
+  width: 100%;
+  max-width: 450px;
+
+  background: white;
+
+  padding: 2rem;
+
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h1 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.card p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  font-weight: 600;
+}
+
+.bottomText {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.bottomText a {
+  margin-left: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/*   PASSWORD EYE  */
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper input {
+  width: 100%;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  display: flex;
+  align-items: center;
+}
+
+.eyeIcon:hover {
+  color: #000;
+}

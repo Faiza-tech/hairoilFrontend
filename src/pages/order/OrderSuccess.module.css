@@ -1,0 +1,151 @@
+.page {
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+  font-family: Arial;
+}
+
+/* SUCCESS BOX */
+.successBox {
+  text-align: center;
+  padding: 30px;
+  background: #f0fff4;
+  border: 1px solid #b7f5c0;
+  border-radius: 12px;
+  margin-bottom: 30px;
+}
+
+.checkIcon {
+  width: 60px;
+  height: 60px;
+  background: #22c55e;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subText {
+  color: #555;
+  margin-top: 10px;
+}
+
+.orderId {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 12px;
+  background: #e0f2fe;
+  color: #0284c7;
+  border-radius: 20px;
+}
+
+/* GRID */
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.card {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* ITEM */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.itemTotal {
+  font-weight: bold;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  background: black;
+  color: white;
+}
+
+.buttons button:hover {
+  opacity: 0.8;
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+
+
+.pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.processing {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.shipped {
+  background: #ecfeff;
+  color: #0891b2;
+}
+
+.delivered {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+
+
+/* 
+
+Your order flow is now essentially complete:
+
+Cart → Checkout → Validation → Order Save → Success Page → My Orders → Admin Orders → Status Updates ✅
+
+*/

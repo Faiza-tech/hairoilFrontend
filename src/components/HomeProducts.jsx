@@ -1,16 +1,61 @@
-
-
+import { useEffect, useState } from "react";
+import api from "../api/Axios";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import { productsData } from "../data/productsData";
+
 
 import "./HomeProducts.css";
 import "../Styles/CommonStyles.css";
 
 const HomeProducts = () => {
+
   const { cartItems, addToCart, increaseQty, decreaseQty } = useCart();
 
-  const getItem = (id) => cartItems.find((item) => item.id === id);
+  const [products, setProducts] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+
+  // FETCH PRODUCTS
+  useEffect(() => {
+
+    const fetchProducts = async () => {
+
+      try {
+
+        const res = await api.get("/api/products");
+        
+        setProducts(res.data.products);
+
+      } catch (error) {
+
+        console.error(
+          "Error fetching products:",
+          error
+        );
+
+      } finally {
+
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+
+  }, []);
+
+
+  // FIND CART ITEM
+  const getItem = (id) =>
+    cartItems.find(
+      (item) => item._id === id
+    );
+
+
+  // LOADING
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <section id="products" className="home-products">
@@ -26,14 +71,14 @@ const HomeProducts = () => {
 
         {/* PRODUCTS GRID (ONLY 4 PRODUCTS) */}
         <div className="home-products-grid">
-          {productsData.slice(0, 4).map((product) => {
-            const item = getItem(product.id);
+          {products.slice(0, 4).map((product) => {
+            const item = getItem(product._id);
 
             return (
-              <div key={product.id} className="home-product-card">
+              <div key={product._id} className="home-product-card">
 
                 {/* CLICK IMAGE → PRODUCT DETAILS PAGE */}
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/product/${product._id}`}>
                   <div className="home-product-image">
                     <img src={product.image} alt={product.title} />
                   </div>
@@ -52,9 +97,9 @@ const HomeProducts = () => {
                     {/* CART BUTTON LOGIC */}
                     {item ? (
                       <div className="home-qty-controls">
-                        <button onClick={() => decreaseQty(product.id)}>-</button>
+                        <button onClick={() => decreaseQty(product._id)}>-</button>
                         <span>{item.quantity}</span>
-                        <button onClick={() => increaseQty(product.id)}>+</button>
+                        <button onClick={() => increaseQty(product._id)}>+</button>
                       </div>
                     ) : (
                       <button

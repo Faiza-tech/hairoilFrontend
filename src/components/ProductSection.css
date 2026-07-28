@@ -1,5 +1,4 @@
 .product-section.soft {
-    /*  padding: 5.5rem 2rem;*/
     padding-top: 5.5rem;
     background-color: #faf9f6;
     display: flex;
@@ -64,7 +63,6 @@
 
     .product-section.soft {
         padding: 2rem 2rem 0px;
-        /*padding-top: 2rem;*/
         background-color: #faf9f6;
         display: flex;
         justify-content: center;

@@ -8,7 +8,7 @@
     text-align: center;
     font-size: 2.5rem;
     color: #5D4037;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5rem;
 }
 
 /* ===== VIEW TOGGLE BAR ===== */
@@ -159,4 +159,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/*******  filter bars   ******************/
+
+
+.filters-bar {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.filters-bar input,
+.filters-bar select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }

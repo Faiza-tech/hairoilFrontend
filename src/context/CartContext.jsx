@@ -6,6 +6,7 @@ export const CartProvider = ({ children }) => {
 
   //  Load saved cart on first render
   const [cartItems, setCartItems] = useState(() => {
+
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
@@ -15,18 +16,23 @@ export const CartProvider = ({ children }) => {
   }, [cartItems]);
 
 
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.removeItem("cart");
+  };
+
 
 
   // ADD ITEM
   const addToCart = (product) => {
     setCartItems((prev) => {
       const existing = prev.find(
-        (item) => item.id === product.id
+        (item) => item._id === product._id
       );
 
       if (existing) {
         return prev.map((item) =>
-          item.id === product.id
+          item._id === product._id
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
@@ -39,7 +45,7 @@ export const CartProvider = ({ children }) => {
   const increaseQty = (id) => {
     setCartItems(prev =>
       prev.map(item =>
-        item.id === id
+        item._id === id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
@@ -50,7 +56,7 @@ export const CartProvider = ({ children }) => {
     setCartItems(prev =>
       prev
         .map(item =>
-          item.id === id
+          item._id === id
             ? { ...item, quantity: item.quantity - 1 }
             : item
         )
@@ -60,7 +66,7 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (id) => {
     setCartItems(prev =>
-      prev.filter(item => item.id !== id)
+      prev.filter(item => item._id !== id)
     );
   };
 
@@ -71,7 +77,8 @@ export const CartProvider = ({ children }) => {
       addToCart,
       removeFromCart,
       increaseQty,
-      decreaseQty
+      decreaseQty,
+      clearCart,
     }}>
       {children}
     </CartContext.Provider>

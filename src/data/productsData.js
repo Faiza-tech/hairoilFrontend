@@ -24,6 +24,7 @@ export const productsData = [
     title: "Nourishing Blend",
     description: "Deep conditioning with argan & coconut oils",
     price: 349.99,
+    category: "oil", 
     features: [
       "Argan oil enriched",
       "Deep scalp nourishment",
@@ -38,6 +39,7 @@ export const productsData = [
     title: "Whitening Rice Soap",
     description: "Glow your skin",
     price: 399.99,
+    category: "soap",
     features: [
       "Brightens skin tone",
       "Removes tan",
@@ -52,6 +54,7 @@ export const productsData = [
     title: "Amla Hair Oil",
     description: "Lightweight jojoba & vitamin E blend",
     price: 299.99,
+    category: "oil",
     features: [
       "Prevents hair fall",
       "Strengthens roots",
@@ -65,6 +68,7 @@ export const productsData = [
     title: "Organic Orange Soap",
     description: "Deep nourishment.",
     price: 299.99,
+    category: "soap"
   },
 
   {
@@ -73,6 +77,7 @@ export const productsData = [
     title: "Combo Pack",
     description: "Best value combo.",
     price: 699,
+    category: "combo" // (better than oil)
   },
 
   {
@@ -81,6 +86,7 @@ export const productsData = [
     title: "Herbal Hair Oil",
     description: "Natural herbs reduce hair fall.",
     price: 299,
+    category: "oil"
   },
 
   {
@@ -89,6 +95,7 @@ export const productsData = [
     title: "Onion Hair Oil",
     description: "Boosts hair growth.",
     price: 349,
+    category: "oil"
   },
 
   {
@@ -97,6 +104,7 @@ export const productsData = [
     title: "Amla Hair Oil",
     description: "Adds shine, prevents greying.",
     price: 350,
+    category: "oil"
   },
 
   {
@@ -105,89 +113,69 @@ export const productsData = [
     title: "Hair Accessories",
     description: "Hair Accessories.",
     price: 199,
+    category: "accessories"
   },
+
   {
-  id: 10,
-  image: scrunchie,
-  title: "Silk Scrunchie",
-  description: "Soft silk scrunchie for gentle hair tying",
-  price: 149,
-  features: [
-    "No hair breakage",
-    "Soft elastic grip",
-    "Stylish daily wear"
-  ]
-},
-{
-  id: 11,
-  image: simplePins,
-  title: "Simple Hair Pins",
-  description: "Minimal everyday hair pins for neat styling",
-  price: 99,
-  features: [
-    "Strong grip",
-    "Lightweight",
-    "Daily use friendly"
-  ]
-},
-{
-  id: 12,
-  image: tieHairBand,
-  title: "Tie Hair Band",
-  description: "Comfortable stretchable hair tie band",
-  price: 79,
-  features: [
-    "Elastic hold",
-    "No pulling",
-    "Soft fabric"
-  ]
-},
-{
-  id: 13,
-  image: dotsClip,
-  title: "Polka Dot Hair Clip",
-  description: "Cute dotted clip for stylish hair look",
-  price: 129,
-  features: [
-    "Trendy design",
-    "Strong grip",
-    "Casual wear"
-  ]
-},
-{
-  id: 14,
-  image: diffCrunchy,
-  title: "Butterfly Claw Clip",
-  description: "Large claw clip for strong hold bun",
-  price: 199,
-  features: [
-    "Heavy grip",
-    "Durable plastic",
-    "Perfect for buns"
-  ]
-},
-{
-  id: 15,
-  image: combHair,
-  title: "Hair Comb",
-  description: "Wide tooth comb for smooth detangling",
-  price: 89,
-  features: [
-    "Anti-breakage teeth",
-    "Scalp friendly",
-    "Easy detangling"
-  ]
-},
-{
-  id: 16,
-  image: blueClip,
-  title: "Blue Hair Clip",
-  description: "Elegant blue clip for daily styling",
-  price: 119,
-  features: [
-    "Strong hold",
-    "Stylish design",
-    "Lightweight"
-  ]
-}
+    id: 10,
+    image: scrunchie,
+    title: "Silk Scrunchie",
+    description: "Soft silk scrunchie",
+    price: 149,
+    category: "accessories"
+  },
+
+  {
+    id: 11,
+    image: simplePins,
+    title: "Simple Hair Pins",
+    description: "Minimal everyday pins",
+    price: 99,
+    category: "accessories"
+  },
+
+  {
+    id: 12,
+    image: tieHairBand,
+    title: "Tie Hair Band",
+    description: "Stretchable band",
+    price: 79,
+    category: "accessories"
+  },
+
+  {
+    id: 13,
+    image: dotsClip,
+    title: "Polka Dot Clip",
+    description: "Cute hair clip",
+    price: 129,
+    category: "accessories"
+  },
+
+  {
+    id: 14,
+    image: diffCrunchy,
+    title: "Butterfly Claw Clip",
+    description: "Strong hold clip",
+    price: 199,
+    category: "accessories"
+  },
+
+  {
+    id: 15,
+    image: combHair,
+    title: "Hair Comb",
+    description: "Wide tooth comb",
+    price: 89,
+    category: "accessories"
+  },
+
+  {
+    id: 16,
+    image: blueClip,
+    title: "Blue Hair Clip",
+    description: "Elegant styling clip",
+    price: 119,
+    category: "accessories"
+  }
 ];

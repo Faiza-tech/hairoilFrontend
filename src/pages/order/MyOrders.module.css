@@ -1,0 +1,70 @@
+.page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.empty {
+  text-align: center;
+  color: #666;
+}
+
+.orderCard {
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.orderCard:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.orderRow {
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.processing {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.shipped {
+  background: #ecfeff;
+  color: #0891b2;
+}
+
+.delivered {
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+.cancelled {
+  background: #fef2f2;
+  color: #dc2626;
+}

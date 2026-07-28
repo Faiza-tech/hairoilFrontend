@@ -5,11 +5,13 @@ import * as yup from "yup";
 const userSchema = yup.object({
   name: yup
     .string()
+    .trim()
     .matches(/^[A-Za-z\s]+$/, "Only letters allowed")
     .required("Name is required"),
 
   email: yup
     .string()
+    .trim()
     .email("Invalid email")
     .required("Email is required"),
 
@@ -17,6 +19,10 @@ const userSchema = yup.object({
     .string()
     .matches(/^\+?\d{10,15}$/, "Invalid phone number")
     .required("Phone is required"),
+
+  subject: yup
+    .string()
+    .required("Subject is required"),
 
   message: yup
     .string()

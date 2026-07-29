@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./SideBar";
 import "./AdminLayout.css";
 
 const AdminLayout = ({ children }) => {

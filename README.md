@@ -179,7 +179,7 @@ npm install @stripe/stripe-js
 
 # 📁 Project Structure
 
-```text
+```
 UiHairOil/
 │
 ├── public/
@@ -306,7 +306,7 @@ npm install
 
 Create:
 
-```text
+```
 .env
 ```
 
@@ -324,7 +324,7 @@ npm run dev
 
 The Vite development server normally runs on:
 
-```text
+```
 http://localhost:5173
 ```
 
@@ -350,7 +350,7 @@ npm run preview
 
 Screenshots can be stored inside:
 
-```text
+```
 screenshots/
 ```
 
@@ -377,6 +377,7 @@ Example:
 
 ```markdown
 ![Home Page](./screenshots/home.png)
+
 ```
 
 ---
@@ -385,7 +386,7 @@ Example:
 
 The customer checkout flow is:
 
-```text
+```
 Browse Products
       ↓
 Add to Cart
@@ -409,7 +410,7 @@ Order History
 
 # 🔐 Authentication Flow
 
-```text
+```
 Register
    ↓
 Login
@@ -423,7 +424,7 @@ User Account
 
 Forgot Password:
 
-```text
+```
 Forgot Password
       ↓
 Enter Email
@@ -441,7 +442,7 @@ Login With New Password
 
 # 👨‍💼 Admin Flow
 
-```text
+```
 Admin Login
      ↓
 AdminRoute Protection
@@ -514,7 +515,7 @@ Potential future improvements include:
 
 Backend repository:
 
-```text
+```
 https://github.com/Faiza-tech/hairoilbackend
 ```
 
@@ -526,7 +527,7 @@ https://github.com/Faiza-tech/hairoilbackend
 
 GitHub:
 
-```text
+```
 https://github.com/Faiza-tech
 ```
 

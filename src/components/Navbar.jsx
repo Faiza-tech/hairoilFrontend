@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 import { Menu, X } from "lucide-react";
 import { useCart } from "../context/CartContext";
-import Nlogo from "../assets/logoNav.png";
+import Nlogo from "../assets/LogoNav.png";
 import "./Navbar.css";
 import { getUser } from "../utils/auth";
 import { logout } from "../utils/auth";

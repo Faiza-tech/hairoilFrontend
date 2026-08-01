@@ -45,6 +45,7 @@ export const checkoutSchema = yup.object({
 
   postalCode: yup
     .string()
+    .trim()
     .required("Postcode is required")
     .matches(
       /^[A-Z]{1,2}\d[A-Z\d]?\s?\d[A-Z]{2}$/i,

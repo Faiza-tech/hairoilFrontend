@@ -173,6 +173,7 @@ const Checkout = () => {
                     <input
                         {...register("postalCode")}
                         placeholder="Postcode"
+                        maxLength={10}
                     />
 
                     {errors.postalCode && (

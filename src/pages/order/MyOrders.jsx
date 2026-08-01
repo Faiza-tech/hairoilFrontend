@@ -27,24 +27,7 @@ const MyOrders = () => {
     const fetchOrders = async () => {
 
       try {
-        {/**  GET /api/orders/my   means:  “Give me ONLY MY orders” ,
-           we have 2 types of order 
-           1.user ->  GET /api/orders/my -> Only logged-in user's orders
-           2.admin  -> GET /api/orders -> ALL orders in system
-
-           SIMPLE MEMORY TRICK
-            /my = “MY orders page”
-             / = “ALL orders (admin)”       
-
-           */}
-
-       /* const { data } = await api.get("/api/orders/my", {
-
-          headers: {
-            Authorization: `Bearer ${getToken()}`,
-          },
-        });*/
-
+      
         const { data } = await api.get("/api/orders/my");
 
         setOrders(data);
@@ -141,18 +124,3 @@ const MyOrders = () => {
 
 export default MyOrders;
 
-
-{/* {orders.map((order) => (
-        <div key={order._id} style={{ border: "1px solid #ccc", margin: "10px", padding: "10px" }}>
-          <p>Order ID: {order._id}</p>
-          <p>Total: ₹{order.totalPrice}</p>
-          <p>Status: {order.status}</p>
-        </div>
-
-      ))}
-
-    </div>
-  );
-};
-
-export default MyOrders;*/}

@@ -260,68 +260,104 @@ const ProductDetails = () => {
 
           ) : (
 
-            product.reviews.map((review) => (
-              <div key={review._id} className={styles.reviewCard}>
 
-                {/* LEFT SIDE: name, rating, comment */}
-                <div className={styles.reviewContent}>
-                  <h4 className={styles.reviewName}>{review.name}</h4>
 
-                  <p className={styles.reviewRating}>
-                    {"⭐".repeat(review.rating)}
-                  </p>
+            product.reviews.map((review) => {
 
-                  <p className={styles.reviewComment}>{review.comment}</p>
+
+              console.log("Logged user:", userInfo?._id);
+              console.log("Review user:", review.user);
+              console.log("Is admin:", userInfo?.isAdmin);
+
+              console.log(
+                "Can edit?",
+                review.user?.toString() === userInfo?._id?.toString()
+              );
+
+              console.log(
+                "Show menu?",
+                review.user?.toString() === userInfo?._id?.toString() ||
+                userInfo?.isAdmin
+              );
+
+              return (
+                <div key={review._id} className={styles.reviewCard}>
+
+
+                  {/* LEFT SIDE: name, rating, comment */}
+                  <div className={styles.reviewContent}>
+                    <h4 className={styles.reviewName}>{review.name}</h4>
+
+                    <p className={styles.reviewRating}>
+                      {"⭐".repeat(review.rating)}
+                    </p>
+
+                    <p className={styles.reviewComment}>{review.comment}</p>
+                  </div>
+
+                  {/* RIGHT SIDE: 3-dot menu */}
+                  {/* {getToken() &&
+                  review.user.toString() === userInfo?._id.toString() && (*/}
+                  {getToken() &&
+                    (
+                      review.user.toString() === userInfo?._id.toString()
+                      || userInfo?.isAdmin
+                    ) && (
+
+                      <div className={styles.menuWrapper}>
+                        <button
+                          className={styles.menuBtn}
+                          onClick={() =>
+                            setOpenMenu(openMenu === review._id ? null : review._id)
+                          }
+                        >
+                          {/**  <BsThreeDotsVertical />  */}
+                          <HiOutlineDotsVertical />
+                        </button>
+
+                        {openMenu === review._id && (
+                          <div className={styles.dropdownMenu}>
+                            { /*<div className={styles.dropdownItem}>*/}
+                            {/* <div className={styles.dropdownMenu}>
+                          <button
+                            onClick={() => {
+                              setEditingReviewId(review._id);
+                              setEditComment(review.comment);
+                              setEditRating(review.rating);
+                              setOpenMenu(null);
+                            }}
+                          >
+                            {/**  ✏    *  <FiEdit2 /> Edit
+                          </button>*/}
+                            {review.user.toString() === userInfo?._id.toString() && (
+                              <button
+
+                                onClick={() => {
+                                  setEditingReviewId(review._id);
+                                  setEditComment(review.comment);
+                                  setEditRating(review.rating);
+                                  setOpenMenu(null);
+                                }}
+                              >
+                                <FiEdit2 />
+                                Edit
+                              </button>
+                            )}
+
+                            {/**<button onClick={() => deleteReview(review._id)} className={`${styles.dropdownItem} ${styles.deleteItem}`}> */}
+                            <button onClick={() => deleteReview(review._id)}>
+
+                              {/**  🗑  */}       <RiDeleteBin6Line /> Delete
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                 </div>
 
-                {/* RIGHT SIDE: 3-dot menu */}
-
-                {getToken() &&
-                  (
-                    review.user.toString() === userInfo?._id.toString()
-                    || userInfo?.isAdmin
-                  ) && (
-
-                    <div className={styles.menuWrapper}>
-                      <button
-                        className={styles.menuBtn}
-                        onClick={() =>
-                          setOpenMenu(openMenu === review._id ? null : review._id)
-                        }
-                      >
-                        {/**  <BsThreeDotsVertical />  */}
-                        <HiOutlineDotsVertical />
-                      </button>
-
-                      {openMenu === review._id && (
-                        <div className={styles.dropdownMenu}>
-
-                          {review.user.toString() === userInfo?._id.toString() && (
-                            <button
-
-                              onClick={() => {
-                                setEditingReviewId(review._id);
-                                setEditComment(review.comment);
-                                setEditRating(review.rating);
-                                setOpenMenu(null);
-                              }}
-                            >
-                              <FiEdit2 />
-                              Edit
-                            </button>
-                          )}
-
-
-                          <button onClick={() => deleteReview(review._id)}>
-                            <RiDeleteBin6Line /> Delete
-                          </button>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-              </div>
-            ))
+              );
+            })
 
           )}
 

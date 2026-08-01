@@ -31,13 +31,11 @@ const Cart = () => {
                 <h3>{item.name || item.title}</h3>
 
                 <p className={styles.price}>
-                 {/* ₹{item.price.toLocaleString("en-PK")}*/}
+            
                  £{item.price.toLocaleString("en-GB")}
                 </p>
 
                 <p className={styles.subtotal}>
-                { /* Subtotal: ₹
-                  {(item.price * item.quantity).toLocaleString("en-PK")}*/}
                   Subtotal: £
                   <h2>Total: £{total.toLocaleString("en-GB")}</h2>
                 </p>

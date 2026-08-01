@@ -105,11 +105,11 @@ const OrderSuccess = () => {
               <div>
                 <h4>{item.name}</h4>
                 <p>Qty: {item.qty}</p>
-                <p>£{item.price}</p>  {/** <p>₹{item.price}</p>*/}
+                <p>£{item.price}</p>  
               </div>
 
               <div className={styles.itemTotal}>
-                £{item.qty * item.price} {/**  ₹{item.qty * item.price} */}
+                £{item.qty * item.price} 
               </div>
             </div>
           ))}

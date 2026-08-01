@@ -34,8 +34,7 @@ const ProductCard = ({ _id, image, title, description, price, onImageClick, rati
 
           <p>{description}</p>
           <span className={styles.price}>£{price}</span>
-          {/**    <span className={styles.price}>₹{price}</span>  */}
-
+       
           {item ? (
 
             <div className={styles["qty-controls"]}>

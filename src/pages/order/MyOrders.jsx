@@ -80,7 +80,6 @@ const MyOrders = () => {
               <span className={styles.label}>
                 Total:
               </span>{" "}
-              {/*  ₹{order.totalPrice}*/}
               £{order.totalPrice}
             </div>
 

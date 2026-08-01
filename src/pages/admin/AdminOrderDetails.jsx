@@ -117,7 +117,7 @@ const AdminOrderDetails = () => {
 
                                     <td>{item.qty}</td>
 
-                                    <td>₹{item.price}</td>
+                                    <td>£{item.price}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -131,7 +131,7 @@ const AdminOrderDetails = () => {
                     <h3>Total Amount</h3>
 
                     <div className={styles.totalAmount}>
-                        ₹{order.totalPrice}
+                        £{order.totalPrice}
                     </div>
                 </div>
 

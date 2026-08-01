@@ -174,7 +174,7 @@ const ProductDetails = () => {
 
             {/* ⭐ RATING */} <p> ⭐ {product.ratings?.toFixed(1) || 0} {" "} ({product.numReviews} reviews) </p>
 
-            <p className={styles.price}> ₹{product.price} </p>
+            <p className={styles.price}> £{product.price} </p>
 
 
             {/* CART CONTROLS */}

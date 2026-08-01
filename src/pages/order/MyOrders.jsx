@@ -27,7 +27,7 @@ const MyOrders = () => {
     const fetchOrders = async () => {
 
       try {
-      
+
         const { data } = await api.get("/api/orders/my");
 
         setOrders(data);
@@ -80,7 +80,8 @@ const MyOrders = () => {
               <span className={styles.label}>
                 Total:
               </span>{" "}
-              ₹{order.totalPrice}
+              {/*  ₹{order.totalPrice}*/}
+              £{order.totalPrice}
             </div>
 
             <div className={styles.orderRow}>

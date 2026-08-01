@@ -202,7 +202,7 @@ const Checkout = () => {
             <div className="checkout-summary">
 
                 <div className="checkout-total">
-                    Total: ₹{totalPrice}
+                    Total: £{totalPrice}   {/* ₹{totalPrice} */}
                 </div>
 
 

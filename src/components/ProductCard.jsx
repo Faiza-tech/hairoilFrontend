@@ -26,14 +26,15 @@ const ProductCard = ({ _id, image, title, description, price, onImageClick, rati
 
         <div className={styles["product-info"]}>
           <h3>{title}</h3>
-          
+
           <p className={styles.rating}>
             ⭐ {ratings?.toFixed(1) || 0} {" "} ({numReviews || 0} reviews)
           </p>
 
 
           <p>{description}</p>
-          <span className={styles.price}>₹{price}</span>
+          <span className={styles.price}>£{price}</span>
+          {/**    <span className={styles.price}>₹{price}</span>  */}
 
           {item ? (
 

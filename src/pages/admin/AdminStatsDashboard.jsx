@@ -81,7 +81,7 @@ const AdminStatsDashboard = () => {
 
           <AdminCard
             title="Revenue"
-            value={`₹${Number(stats.totalRevenue || 0).toLocaleString()}`}
+            value={`£${Number(stats.totalRevenue || 0).toLocaleString()}`}
           />
 
           <AdminCard
@@ -256,7 +256,7 @@ const AdminStatsDashboard = () => {
 
                     <td>{order.user?.name}</td>
 
-                    <td>₹{order.totalPrice}</td>
+                    <td>£{order.totalPrice}</td>
 
                     <td>
                       <span

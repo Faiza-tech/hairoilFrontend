@@ -91,7 +91,8 @@ const HomeProducts = () => {
 
                   <div className="home-product-footer">
                     <span className="home-product-price">
-                      ₹{product.price}
+                     {/** ₹{product.price} */}  
+                      £{product.price}
                     </span>
 
                     {/* CART BUTTON LOGIC */}

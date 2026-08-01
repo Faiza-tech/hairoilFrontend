@@ -120,9 +120,9 @@ const Products = () => {
           }}
         >
           <option value="all">Filter by Price</option>
-          <option value="low">Below ₹200</option>
-          <option value="mid">₹200 - ₹400</option>
-          <option value="high">Above ₹400</option>
+          <option value="low">Below £200</option>  {/**₹200 */}
+          <option value="mid">£200 - £400</option>
+          <option value="high">Above £400</option>
         </select>
 
         {/* SORT BY */}

@@ -254,7 +254,7 @@ const AdminOrders = () => {
               <p>
                 <strong>Total:</strong>
                 {" "}
-                ₹{order.totalPrice}
+                £{order.totalPrice}
               </p>
 
               <p>
